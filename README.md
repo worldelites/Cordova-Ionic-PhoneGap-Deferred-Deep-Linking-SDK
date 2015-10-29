@@ -1,7 +1,7 @@
 # Branch Cordova SDK
 
 ## Full Documentation
-This is the readme file of our open source Cordova SDK. The Cordova SDK shares the same code base as the Branch Web SDK, and includes functions to call all of the same API endpoints.  you can find a live demo of the Web SDK: [https://cdn.branch.io/example.html](https://cdn.branch.io/example.html)
+This is the readme file of our open source Cordova SDK. The Cordova SDK shares the same code base as the Branch Web SDK, and includes functions to call all of the same API endpoints.  You can find a live demo of the Web SDK: [https://cdn.branch.io/example.html](https://cdn.branch.io/example.html)
 
 =======
 
@@ -23,4 +23,3 @@ This is the readme file of our open source Cordova SDK. The Cordova SDK shares t
 - Changelog (in this repo)
 - [Testing](https://dev.branch.io/recipes/testing_your_integration/cordova/)
 - [Support portal, FAQ, and user forums](http://support.branch.io)
-
