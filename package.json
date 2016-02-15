@@ -21,7 +21,12 @@
     "jsdox": "0.4.9"
   },
   "dependencies": {
-    "request": "^2.55.0"
+    "request": "^2.55.0",
+    "mkpath": ">=1.0.0",
+    "xml2js": ">=0.4",
+    "rimraf": ">=2.4",
+    "node-version-compare": ">=1.0.1",
+    "plist": ">=1.2.0"
   },
   "build": "1.8.0"
 }

@@ -8,7 +8,12 @@
 		<clobbers target="branch" />
 		<clobbers target="Branch" />
 	</js-module>
+	<!-- Hooks -->
+  <hook src="hooks/afterPrepareHook.js" type="after_prepare"/>
+  <hook src="hooks/beforePluginInstallHook.js" type="before_plugin_install" />
+
 	<platform name="ios">
+		<hook src="hooks/iosBeforePrepareHook.js" type="before_prepare" />
 		<config-file target="config.xml" parent="/*">
 			<feature name="BranchDevice">
 				<param name="ios-package" value="BNCDevice" />
