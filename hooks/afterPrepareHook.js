@@ -54,10 +54,10 @@ function run(cordovaContext) {
  */
 function activateUniversalLinksInAndroid(cordovaContext) {
   // inject preferenes into AndroidManifest.xml
-  androidManifestWriter.writePreferences(cordovaContext);
+  androidManifestWriter.writePreferences(cordovaContext, pluginPreferences);
 
   // generate html file with the <link> tags that you should inject on the website.
-  androidWebHook.generate(cordovaContext);
+  androidWebHook.generate(cordovaContext, pluginPreferences);
 }
 
 /**
