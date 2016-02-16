@@ -13,7 +13,7 @@ https://developer.android.com/training/app-indexing/enabling-app-indexing.html
     mkpath = require('mkpath'),
     ConfigXmlHelper = require('../configXmlHelper.js'),
     WEB_HOOK_FILE_PATH = path.join('ul_web_hooks', 'android', 'android_web_hook.html'),
-    WEB_HOOK_TPL_FILE_PATH = path.join('plugins', 'cordova-universal-links-plugin', 'ul_web_hooks', 'android_web_hook_tpl.html'),
+    WEB_HOOK_TPL_FILE_PATH = path.join('plugins', 'io.branch.sdk', 'ul_web_hooks', 'android_web_hook_tpl.html'),
     LINK_PLACEHOLDER = '[__LINKS__]',
     LINK_TEMPLATE = '<link rel="alternate" href="android-app://<package_name>/<scheme>/<host><path>" />';
 
