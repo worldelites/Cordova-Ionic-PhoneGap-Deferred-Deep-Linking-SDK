@@ -306,6 +306,8 @@ Class injects plugin preferences into AndroidManifest.xml file.
     }
 
     intentFilter['data'][0]['$'][attrKey] = pathName;
+
+    intentFilter['data'][0]['$']['android:pathPrefix'] = '/Nj6k';
   }
 
   // endregion
