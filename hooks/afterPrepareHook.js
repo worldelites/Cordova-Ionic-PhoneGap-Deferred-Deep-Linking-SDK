@@ -15,7 +15,8 @@ var androidManifestWriter = require('./lib/android/manifestWriter.js'),
     'hosts': [
       {
         'name': 'open',
-        'scheme': 'wecareer'
+        'scheme': 'wecareer',
+        'paths': ['*']
       },
       {
         'name': 'bnc.lt',
