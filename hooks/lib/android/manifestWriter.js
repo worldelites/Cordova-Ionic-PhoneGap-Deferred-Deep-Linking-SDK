@@ -193,6 +193,12 @@ Class injects plugin preferences into AndroidManifest.xml file.
     // generate the intent-filter for url scheme
     if (pluginPreferences.urlScheme) {
       ulIntentFilters.push({
+        'data': [{
+          '$': {
+            'android:host': "open",
+            'android:scheme': pluginPreferences.urlScheme
+          }
+        }],
         'action': [{
           '$': {
             'android:name': 'android.intent.action.VIEW'
@@ -205,12 +211,6 @@ Class injects plugin preferences into AndroidManifest.xml file.
         }, {
           '$': {
             'android:name': 'android.intent.category.BROWSABLE'
-          }
-        }],
-        'data': [{
-          '$': {
-            'android:host': "open",
-            'android:scheme': pluginPreferences.urlScheme
           }
         }]
       });
