@@ -190,6 +190,33 @@ Class injects plugin preferences into AndroidManifest.xml file.
       });
     });
 
+    // generate the intent-filter for url scheme
+    if (pluginPreferences.urlScheme) {
+      ulIntentFilters.push({
+        'action': [{
+          '$': {
+            'android:name': 'android.intent.action.VIEW'
+          }
+        }],
+        'category': [{
+          '$': {
+            'android:name': 'android.intent.category.DEFAULT'
+          }
+        }, {
+          '$': {
+            'android:name': 'android.intent.category.BROWSABLE'
+          }
+        }],
+        'data': [{
+          '$': {
+            'android:host': "open",
+            'android:scheme': pluginPreferences.urlScheme
+          }
+        }]
+      });
+    }
+
+
     // add Universal Links intent-filters to the launch activity
     launchActivity['intent-filter'] = launchActivity['intent-filter'].concat(ulIntentFilters);
 
@@ -257,9 +284,6 @@ Class injects plugin preferences into AndroidManifest.xml file.
    */
   function createIntentFilter(host, scheme, pathPrefix, pathName) {
     var intentFilter = {
-      '$': {
-        'android:autoVerify': "true"
-      },
       'action': [{
         '$': {
           'android:name': 'android.intent.action.VIEW'

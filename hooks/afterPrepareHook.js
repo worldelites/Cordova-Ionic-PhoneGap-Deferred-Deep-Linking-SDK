@@ -17,7 +17,8 @@ var androidManifestWriter = require('./lib/android/manifestWriter.js'),
       'scheme': 'https',
       'paths': ['*'],
       'pathPrefix': '/Nj6k'
-    }]
+    }],
+    'urlScheme': 'we-career'
   };
 
 module.exports = function(ctx) {
