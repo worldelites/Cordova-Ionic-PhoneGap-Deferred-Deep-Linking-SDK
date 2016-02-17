@@ -186,7 +186,7 @@ Class injects plugin preferences into AndroidManifest.xml file.
     // generate intent-filters
     pluginPreferences.hosts.forEach(function(host) {
       host.paths.forEach(function(hostPath) {
-        ulIntentFilters.push(createIntentFilter(host.name, host.scheme, hostPath));
+        ulIntentFilters.push(createIntentFilter(host.name, host.scheme, host.pathPrefix, hostPath));
       });
     });
 
@@ -255,7 +255,7 @@ Class injects plugin preferences into AndroidManifest.xml file.
    * @param {String} pathName - host path
    * @return {Object} intent-filter as a JSON object
    */
-  function createIntentFilter(host, scheme, pathName) {
+  function createIntentFilter(host, scheme, pathPrefix, pathName) {
     var intentFilter = {
       'action': [{
         '$': {
@@ -278,6 +278,10 @@ Class injects plugin preferences into AndroidManifest.xml file.
         }
       }]
     };
+
+    if (pathPrefix) {
+      intentFilter.data[0]['$']['android:pathPrefix'] = pathPrefix;
+    }
 
     injectPathComponentIntoIntentFilter(intentFilter, pathName);
 
@@ -306,8 +310,6 @@ Class injects plugin preferences into AndroidManifest.xml file.
     }
 
     intentFilter['data'][0]['$'][attrKey] = pathName;
-
-    intentFilter['data'][0]['$']['android:pathPrefix'] = '/Nj6k';
   }
 
   // endregion

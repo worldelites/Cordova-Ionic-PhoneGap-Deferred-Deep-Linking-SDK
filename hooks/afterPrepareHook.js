@@ -15,7 +15,8 @@ var androidManifestWriter = require('./lib/android/manifestWriter.js'),
     'hosts': [{
       'name': 'bnc.lt',
       'scheme': 'https',
-      'paths': ['*']
+      'paths': ['*'],
+      'pathPrefix': '/Nj6k'
     }]
   };
 
