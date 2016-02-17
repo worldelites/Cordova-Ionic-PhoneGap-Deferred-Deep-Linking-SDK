@@ -184,38 +184,11 @@ Class injects plugin preferences into AndroidManifest.xml file.
     launchActivity = activitiesList[launchActivityIndex];
 
     // generate intent-filters
-    // pluginPreferences.hosts.forEach(function(host) {
-    //   host.paths.forEach(function(hostPath) {
-    //     ulIntentFilters.push(createIntentFilter(host.name, host.scheme, host.pathPrefix, hostPath));
-    //   });
-    // });
-
-    // generate the intent-filter for url scheme
-    if (pluginPreferences.urlScheme) {
-      ulIntentFilters.push({
-        'data': [{
-          '$': {
-            'android:host': "open",
-            'android:scheme': pluginPreferences.urlScheme
-          }
-        }],
-        'action': [{
-          '$': {
-            'android:name': 'android.intent.action.VIEW'
-          }
-        }],
-        'category': [{
-          '$': {
-            'android:name': 'android.intent.category.DEFAULT'
-          }
-        }, {
-          '$': {
-            'android:name': 'android.intent.category.BROWSABLE'
-          }
-        }]
+    pluginPreferences.hosts.forEach(function(host) {
+      host.paths.forEach(function(hostPath) {
+        ulIntentFilters.push(createIntentFilter(host.name, host.scheme, host.pathPrefix, hostPath));
       });
-    }
-
+    });
 
     // add Universal Links intent-filters to the launch activity
     launchActivity['intent-filter'] = launchActivity['intent-filter'].concat(ulIntentFilters);

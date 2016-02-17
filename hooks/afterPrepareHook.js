@@ -12,13 +12,18 @@ var androidManifestWriter = require('./lib/android/manifestWriter.js'),
   ANDROID = 'android',
   IOS = 'ios',
   pluginPreferences = {
-    'hosts': [{
-      'name': 'bnc.lt',
-      'scheme': 'https',
-      'paths': ['*'],
-      'pathPrefix': '/Nj6k'
-    }],
-    'urlScheme': 'wecareer'
+    'hosts': [
+      {
+        'name': 'open',
+        'scheme': 'wecareer'
+      },
+      {
+        'name': 'bnc.lt',
+        'scheme': 'https',
+        'paths': ['*'],
+        'pathPrefix': '/Nj6k'
+      }
+    ]
   };
 
 module.exports = function(ctx) {
